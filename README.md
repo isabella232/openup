@@ -22,6 +22,7 @@ To setup some example data:
 
 ## Configuration
 
+Configuration instructions forthcoming.
 
 ## Usage
     
