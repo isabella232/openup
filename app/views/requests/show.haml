@@ -1,7 +1,7 @@
 .view-requests
   %h3 
     &laquo; 
-    =link_to 'View Recent Requests', '/'
+    =link_to 'View Recent Requests', '/requests'
 
   .row
     .left
@@ -12,19 +12,19 @@
     .right
       .request-header{:style => "width: 500px"}
         .row
-          %h3{:style => "float: left"}
+          %h3{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
             Subject
-          %span{:style => "float: left"}
+          %span{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
             =@request.subject
         .row
-          %h3{:style => "float: left"}
+          %h3{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
             Department
-          %span{:style => "float: left"}
+          %span{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
             =@request.department.name
         .row
-          %h3{:style => "float: left"}
+          %h3{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
             Date
-          %span{:style => "float: left"}
+          %span{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
             May 10, 2010
         
   .row
