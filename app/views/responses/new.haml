@@ -1,9 +1,35 @@
-= form_for @response, url: create_response_path(@request.id, @request.response_key) do |f|
+.overview{:style => "width: 100%; background-color: #F9F1D2"}
+  .row{:style => "width: 500px; margin: 0 auto"}
+    .left
+      %h3 Request
+    .right
+      %div
+        %strong Subject
+        = @request.subject
+        
+      %div
+        %strong Body
+        = @request.body
+        
+      %div
+        %strong Key
+        = @request.response_key
+        
+      %div
+        %strong Status
+        = @request.status
 
-  = f.label :status
-  = f.select :status, all_statuses
-  
-  = f.label :body
-  = f.text_area :body
-  
-  = submit_tag "Send Response!"
+  .row{:style => "width: 500px; margin: 0 auto"}
+    .left
+      %h3 Response
+
+    = form_for @response, url: create_response_path(@request.id, @request.response_key) do |f|
+
+      .row
+        = f.select :status, all_statuses
+
+      .row
+        = f.text_area :body
+
+      .row
+        = submit_tag "Send Response!"
