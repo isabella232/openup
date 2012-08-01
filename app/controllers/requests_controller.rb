@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
   respond_to :html, :json, :xml
 
   def index
-    @requests = Request.includes(:department, :responses)
+    @requests = Request.includes(:department, :responses).page(params[:page]).per(15)
 
     @departments = []
     Department.limit(5).order('id asc').each do |dept|

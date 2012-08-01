@@ -1,31 +1,3 @@
-.overview{:style => "width: 100%; background-color: #F9F1D2"}
-  .row{:style => "width: 960px; margin: 0 auto"}
-    .description
-      %span People just like you are requesting information all over the city. 
-      %br
-      %br
-      %span Take a peak at what kinds of requests your fellow New Yorkers have made, and how your city agencies are responding
-    .histogram
-      %p Agencies with highest volume of requests
-      -@departments.each do |dept|
-        .row
-          .label
-            =dept.name
-          .bar
-            .pending
-            .fulfilled
-            .approved
-
-    .six.chart
-      .row
-        %div#pie-chart
-        %div#pie-legend
-          %p 20 Percent
-          %p 20 Percent          
-          %p 20 Percent
-
-
-
 .list{:style => "width: 100%"}
   .row{:style => "width: 960px; margin: 0 auto"}
     .six
@@ -62,7 +34,7 @@
                 =link_to request.subject, request
               .agency 
                 Agency:
-                =request.department.name
+                / =request.department.name
                 / =request.agency.name
               .date 
                 Date:

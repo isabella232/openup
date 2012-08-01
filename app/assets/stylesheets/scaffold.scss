@@ -5,7 +5,6 @@
 $blue: #00A79B;
 $yellow: #D8DF21;
 $red: #bf272d;
-
 $shadowheight: 30px;
 
 body {
@@ -36,107 +35,36 @@ body {
   } 
 }
 
-
-
-h1,h2,h3,h4,h5{
-  font-family: "Arvil",sans-serif;
-  text-decoration: none;
-  font-weight: normal;
+.container{
+  width: 100%;
 }
-
-h3{
-  font-size: 150%;
-  &a{
-    color: #00A99D;
-    text-decoration: none;
-
-  }
-}
-
-
-
 
 
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px; 
-}
+  font-size: 11px; }
 
 a {
   color: #000;
   &:visited {
-    color: #666; 
-  }
-  
-/*  &:hover {
+    color: #666; }
+  &:hover {
     color: #fff;
-    background-color: #000; 
-  } */
-}
-
-.chzn-container-single{
-  .chzn-single{
-    font-size: 25px;
-    height: 35px;
-    line-height: 33px;
-  }
+  } 
 }
 
 div {
   &.field, &.actions {
-    margin-bottom: 10px; 
-  } 
-}
+    margin-bottom: 10px; } }
 
 #notice {
-  color: $yellow; 
-}
+  color: green; }
 
-
-.container{
-  width: 100%;
-}
 .field_with_errors {
   padding: 2px;
   background-color: red;
-  display: table; 
-}
-
-
-.button{
-
-  border-radius: 10px 10px 10px 10px;
-  color: white;
-  float: left;
-  font-family: "Arvil",sans-serif;
-  font-size: 30px;
-  font-weight: lighter;
-  margin: 0 20px;
-  padding: 10px 25px;
-  text-transform: uppercase;
-
-  &.pending{
-    background: $yellow;
-  }
-
-  &.fullfiled{
-    background: $blue;
-  }
-
-  &.denied{
-    background: $red;
-  }
-
-
-  &.disabled{
-    background: #e6e6e6;
-  }
-
-
-}
-
-
+  display: table; }
 
 #error_explanation {
   width: 450px;
@@ -161,3 +89,68 @@ div {
   } 
 }
 
+
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  background: #e6e6e6;
+  border: 1px solid #aaa;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #444;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255, 255, 255, .75);
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: normal;
+  padding: 8px 10px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+  background: #e6e6e6;
+  color: #222;
+  border: 1px solid #888;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa; 
+}
+
+.button:active, button:active, input[type="submit"]:active,input[type="reset"]:active,input[type="button"]:active {
+  border: 1px solid #666;
+  background: #e6e6e6;
+}
+
+.button.full-width,button.full-width, input[type="submit"].full-width,input[type="reset"].full-width,input[type="button"] full-width {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center; 
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button.pending{
+  background: $yellow;
+}
+
+.button.fulfilled{
+  background: $blue;
+}
+
+.button.denied{
+  background: $red;
+}
+
+
+.clearfix {
+  clear: both;
+}

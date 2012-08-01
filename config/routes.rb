@@ -6,6 +6,8 @@ OpenUp::Application.routes.draw do
 
 #  resources :departments
   resources :requests, only: [:new, :create, :index, :show]
+
+  resources :departments
   resources :responses, only: [:create]
   
   match 'respondto/:request_id/:response_key' => 'responses#new', as: 'response_page', via: :get
