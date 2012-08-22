@@ -1,6 +1,6 @@
 @mixin circle-icon {
   .circle {
-    background-color: #00A99D;
+//    background-color: #ccc;
     width: 52px;
     height: 52px;
     padding: 2px 0 0 2px;
@@ -14,12 +14,6 @@
     display: inline-block;
     margin: 0 4px;
     cursor: pointer;
-    -webkit-transition: background-color 0.1s linear;
-    -moz-transition: background-color 0.1s linear;
-    -ie-transition: background-color 0.1s linear;      
-    &:hover {
-      background-color: #025B52;
-    }
   }
 }
 
@@ -38,67 +32,8 @@
 
   }
 
-  .overview{
-    width: 960px; 
-    margin:0 auto; 
-    padding-top: 50px
-  }
 
 
-.chzn-container-single {
-
-  .chzn-single {
-    background-clip: padding-box;
-    background-color: white;
-    background-image: -moz-linear-gradient(center top , white 20%, #F6F6F6 50%, #EEEEEE 52%, #F4F4F4 100%);
-    border: 1px solid #AAAAAA;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
-    color: #444444;
-    display: block;
-    height: 35px;
-    line-height: 24px;
-    overflow: hidden;
-    padding: 10px 0 0 15px;
-    position: relative;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-}
-
-
-  .requests{
-    background-color: #f9f1d2;
-    font-family: 'Fjord';
-  }
-
-  .description{
-    float: left;
-    font-size: 115%;
-    margin-left: 5%;
-    margin-top: 20px;
-    text-align: right;
-    width: 245px;  
-  }
-
-  .list{
-    background-color: white; 
-    width: 960px; 
-    margin:0 auto;
-  }
-
-  .overview::after{
-    content: "";
-    display: block;
-    height: 30px;
-    background-color: #e8e1c3;
-    background-image: -webkit-gradient(linear, left bottom, left top, from(#e8e1c3), to(#f9f1d2));
-    background-image: -webkit-linear-gradient(bottom, #e8e1c3, #f9f1d2);
-    background-image: -moz-linear-gradient(bottom, #e8e1c3, #f9f1d2);
-    background-image: -o-linear-gradient(bottom, #e8e1c3, #f9f1d2);
-    background-image: linear-gradient(to top, #e8e1c3, #f9f1d2);
-
-  }
   .list::before{
     content: "";
     display: block;
@@ -112,12 +47,13 @@
   }
 
   input[type=text]{
-    border: 1px solid #aaa;
+    border: 1px solid #AAA;
     padding: 0;
     margin: 0;
-    box-shadow: none;
-    font-size: 110%;
-    padding: 2px;
+    width: 30%;
+    font-size: 115%;
+    margin: 0 10px;
+    box-shadow: inset -2px 1px 7px 0px #CCC;
   }
 
   .keyword-search{
@@ -129,15 +65,15 @@
 
   .request-header{
 
-      h3{
-        float: left;
-        padding-right: 20px;
-        padding: 0;
-        margin: 0;
-      }
-      .span{
-        float: left;
-      }
+    h3{
+      float: left;
+      padding-right: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    .span{
+      float: left;
+    }
 
   }
 
@@ -157,105 +93,50 @@
       padding: 0;
     }
 
-
-  }
-
-  .histogram{
-    float: right;
-    margin-top: 0px;
-    width: 500px;  
-
-    p{
-      color: #286b64;
-      font-weight: bold;
-      text-align: right;
-      font-size: 95%;
-    }
-
     .label{
-      width: 200px; 
       float: left;
+      width: 100px;
       text-transform: uppercase;
-      padding: 2px 0px;
     }
 
-    .bar{
-      width: 300px; 
-      position: relative; 
+    .content{
       float: left;
-      box-shadow: inset 3px 3px 3px #aaa;
-
-      .pending{
-        height: 25px; 
-        float: left;  
-        width: 50%; 
-        background-color: #d8df21;
-      }
-      .fulfilled{
-        height: 25px; 
-        float: left; 
-        width: 30%; 
-        background-color: #00a79b;
-      }
-      .approved{
-        height: 25px;  
-        float: left; 
-        width: 20%; 
-        background-color: #bf272d;
-      }
-
     }
 
   }
 
 
-
-  .chart{
-    clear: both !important;
-    height: 400px;
-    margin-top: 0;
-    position: relative;
-    
-    #pie-chart{
-      height: 500px;
-      left: 100px;
-      position: absolute;
-      top: -100px;
-      width: 500px;
-    }
-
-    #pie-legend{
-      left: 570px;
-      position: absolute;
-      top: 130px;
-    }
-
+.circles {
+  text-align: right;
+  padding: 40px 25px 35px;
+  
+  .easy {
+    text-transform: uppercase;
+    font-family: 'Ostrich Sans';
+    font-size: 22px;
+    padding-bottom: 10px;
   }
+  @include circle-icon  
 
-  .circles {
-    text-align: right;
-    padding: 40px 25px 35px;
-    
-    .easy {
-      text-transform: uppercase;
-      font-family: 'Ostrich Sans';
-      font-size: 22px;
-      padding-bottom: 10px;
-    }
-    @include circle-icon    
-  }
 
-  footer{
-      background: url("/assets/yellowstripe.png") repeat scroll 0 0 transparent;
-      height: 155px;
-      min-width: 900px;
-      width: 100%;
-      z-index: 1000;  
-  }
+}
+
 }
 
 
 
+.request-header{
+
+  h3, span{
+    float: left; 
+    padding: 0 15px 0 0; 
+    margin: 0 15px 0 0;
+
+  }
+
+
+
+}
 
 .view-requests{
   

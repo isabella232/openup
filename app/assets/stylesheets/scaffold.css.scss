@@ -1,10 +1,14 @@
-@font-face { font-family: Fjord; src: url('/assets/Fjord.ttf'); } 
-@font-face { font-family: Arvil; src: url('/assets/Arvil.ttf'); } 
-@font-face { font-family: Ostrich Sans; src: url('/assets/Ostrich.ttf'); } 
+@font-face { font-family: "Fjord"; src: url('/assets/Fjord.ttf'); } 
+@font-face { font-family: "Arvil"; src: url('/assets/Arvil.ttf'); } 
+@font-face { font-family: "Ostrich Sans"; src: url('/assets/Ostrich.ttf'); } 
+
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700);
+
 
 $blue: #00A79B;
 $yellow: #D8DF21;
 $red: #bf272d;
+$green: #00a99d;
 $shadowheight: 30px;
 
 body {
@@ -48,10 +52,8 @@ pre {
 a {
   color: #000;
   &:visited {
-    color: #666; }
-  &:hover {
-    color: #fff;
-  } 
+    color: #666; 
+  }
 }
 
 div {
@@ -109,16 +111,22 @@ div {
   margin-bottom: 20px;
   line-height: normal;
   padding: 8px 10px;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+//  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+
+  &:hover {
+    color: #fff;
+  } 
+
 }
 
-.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
-  background: #e6e6e6;
-  color: #222;
-  border: 1px solid #888;
-  border-top: 1px solid #aaa;
-  border-left: 1px solid #aaa; 
-}
+//.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+//  background: #e6e6e6;
+//  color: #222;
+//  border: 1px solid #888;
+//  border-top: 1px solid #aaa;
+//  border-left: 1px solid #aaa; 
+//}
 
 .button:active, button:active, input[type="submit"]:active,input[type="reset"]:active,input[type="button"]:active {
   border: 1px solid #666;
@@ -138,16 +146,84 @@ button::-moz-focus-inner,input::-moz-focus-inner {
   padding: 0;
 }
 
-.button.pending{
-  background: $yellow;
+
+.button, .circle{
+
+  font-family: "Yanone Kaffeesatz";
+  color: white;
+  padding: 6px 15px;
+  text-transform: uppercase;
+  border: 0;
+  margin: 0px 4px;
+  font-size: 200%;
+  width: 130px;
+  border-radius: 15px;
+  letter-spacing: .5px;
+  font-weight: 100;
+  text-align: center;
+
+  &.disabled{
+   background: #ccc;
+  }
+
+
+  &.pending{
+    background: $yellow;
+  }
+
+  &.fulfilled{
+    background: $green;
+  }
+
+  &.denied{
+    background: $red;
+  }  
+
+  a{
+    text-decoration: none;
+    color: white;
+    
+  }
 }
 
-.button.fulfilled{
-  background: $blue;
+.chzn-container-single {
+
+  .chzn-single {
+    background-clip: padding-box;
+    background-color: white;
+    background-image: -moz-linear-gradient(center top , white 20%, #F6F6F6 50%, #EEEEEE 52%, #F4F4F4 100%);
+    border: 1px solid #AAAAAA;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #444444;
+    display: block;
+    height: 35px;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 10px 0 0 15px;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+  }
 }
 
-.button.denied{
-  background: $red;
+
+footer{
+  background: url("/assets/yellowstripe.png") repeat scroll 0 0 transparent;
+  z-index: 1000;
+  min-height: 250px;  
+
+  .footer{
+    width: 940px;
+    margin: 0 auto;
+    padding: 75px;
+  }
+
+  .first, .second, .third{
+    width: 300px
+
+  }
+
 }
 
 

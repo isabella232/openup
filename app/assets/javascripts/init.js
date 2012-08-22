@@ -2,6 +2,9 @@ OpenUp = {
   common: {
     init: function() {
       // application-wide code
+      $("select").chosen();
+      $("select").chosen({allow_single_deselect:true});    
+      
     }
   }
 };
