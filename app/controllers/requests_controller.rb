@@ -3,7 +3,16 @@ class RequestsController < ApplicationController
   respond_to :html, :json, :xml
 
   def index
-    @requests = Request.includes(:department, :responses).page(params[:page]).per(15)
+    # @requests = Request.includes(:department, :responses).page(params[:page]).per(10)
+
+
+    if params[:status].nil?
+      @requests = Request.paginate(:page => params[:page], :per_page => 30)
+    else
+      @requests = Request.where(:status => params[:status].capitalize!).paginate(:page => params[:page], :per_page => 30)
+    end
+
+    @total_requests = Request.includes(:department, :responses).size
 
     @departments = []
     Department.limit(5).order('id asc').each do |dept|
@@ -16,6 +25,8 @@ class RequestsController < ApplicationController
       format.json { render :json => @requests.to_json }
     end
   end
+
+  
   
   def show
     @request = Request.find(params[:id])
