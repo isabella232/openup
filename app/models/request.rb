@@ -13,7 +13,7 @@
 #
 
 class Request < ActiveRecord::Base
-  attr_accessible :department_id, :subject, :body
+  attr_accessible :department_id, :subject, :body, :status
   belongs_to :requester
   belongs_to :department
   
@@ -24,10 +24,11 @@ class Request < ActiveRecord::Base
   validates :department_id, presence: true
   validates :subject, presence: true
   validates :body, presence: true
+  validates :status, presence: true
     
-  def status
-    self.responses.last.status if self.responses.any?
-  end
+  # def status
+  #   @status
+  # end
 
   private
   
