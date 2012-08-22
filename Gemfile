@@ -6,7 +6,7 @@ gem 'paperclip'
 gem 'haml'
 gem 'foreigner'
 gem "devise"
-gem 'rails_admin'
+gem 'rails_admin',   '~> 0.0.5'
 gem 'raphael-rails'
 gem 'chosen-rails', '~> 0.9.8.2'
 gem 'factory_girl'
@@ -14,10 +14,9 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'skeleton-rails'
 gem 'jquery-rails'
 gem "jquery-historyjs"
-gem 'will_paginate'
-
 gem "kaminari"
-gem 'ajax_pagination'
+#gem 'ajax_pagination'
+# gem "will_paginate", "= 3.0.2"
 
 
 

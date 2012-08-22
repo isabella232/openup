@@ -17,5 +17,4 @@
 //= require piechart
 //= require chosen-jquery
 //= require init
-//= require ajax_pagination
 //= require_directory ./controllers

@@ -3,13 +3,12 @@ class RequestsController < ApplicationController
   respond_to :html, :json, :xml
 
   def index
-    # @requests = Request.includes(:department, :responses).page(params[:page]).per(10)
 
 
     if params[:status].nil?
-      @requests = Request.paginate(:page => params[:page], :per_page => 30)
+      @requests = Request.includes(:department, :responses).page(params[:page]).per(10)    
     else
-      @requests = Request.where(:status => params[:status].capitalize!).paginate(:page => params[:page], :per_page => 30)
+      @requests = Request.where(:status => params[:status].capitalize!).page(params[:page]).per(10)
     end
 
     @total_requests = Request.includes(:department, :responses).size
