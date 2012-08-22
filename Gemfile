@@ -8,11 +8,18 @@ gem 'foreigner'
 gem "devise"
 gem 'rails_admin'
 gem 'raphael-rails'
-gem 'chosen-rails', '~> 0.9.8'
+gem 'chosen-rails', '~> 0.9.8.2'
 gem 'factory_girl'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'skeleton-rails'
 gem 'jquery-rails'
+gem "jquery-historyjs"
+gem 'will_paginate'
+
+gem "kaminari"
+gem 'ajax_pagination'
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
