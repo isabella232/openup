@@ -39,14 +39,16 @@
 
 
 # # Requester
-# 800.times do
-#  Requester.create! do |r|
-#   r.email = Faker::Internet.email
-#   r.name = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
-#   r.phone = Faker::PhoneNumber.phone_number
-#   r.mailing_address = "#{Faker::Address.street_address()} , #{Faker::Address.city()}, #{Faker::Address.state_abbr()} }"
-#  end
-# end
+Requester.destroy_all
+
+800.times do
+ Requester.create! do |r|
+  r.email = Faker::Internet.email
+  r.name = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
+  r.phone = Faker::PhoneNumber.phone_number
+  r.mailing_address = "#{Faker::Address.street_address()} , #{Faker::Address.city()}, #{Faker::Address.state_abbr()} }"
+ end
+end
 
 
 # Requests:
