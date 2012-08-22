@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610023348) do
+ActiveRecord::Schema.define(:version => 20120821201513) do
 
   create_table "departments", :force => true do |t|
     t.string   "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20120610023348) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
+    t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20120610023348) do
     t.datetime "updated_at",    :null => false
     t.string   "subject"
     t.integer  "requester_id"
+    t.string   "status"
   end
 
   create_table "responses", :force => true do |t|
@@ -57,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20120610023348) do
     t.date     "response_date"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.string   "status"
     t.text     "body"
   end
 
