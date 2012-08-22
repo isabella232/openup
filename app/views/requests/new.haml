@@ -1,6 +1,7 @@
 
 .get-started
-  .total-requests 12,054 requests submitted. Yours is up next.
+  .total-requests  
+    ="#{@total_requests} requests submitted. Yours is up next."
   .link{:"data-scroll-to" => "step1"}
     .text Get Started.
     .triangle
@@ -98,39 +99,39 @@
       
       
 
-= form_tag @request do
-  = label_tag :"request[department_id]"
-  = collection_select :request, :department_id, Department.all, :id, :name
+/ = form_tag @request do
+/   = label_tag :"request[department_id]"
+/   = collection_select :request, :department_id, Department.all, :id, :name
   
-  %hr
+/   %hr
   
-  .four  
-    = label_tag :"requester[name]"
-    = text_field_tag :"requester[name]"
-  .four
-    = label_tag :"requester[email]"
-    = text_field_tag :"requester[email]"
+/   .four  
+/     = label_tag :"requester[name]"
+/     = text_field_tag :"requester[name]"
+/   .four
+/     = label_tag :"requester[email]"
+/     = text_field_tag :"requester[email]"
   
-  .four
-    = label_tag :"requester[phone]"
-    = text_field_tag :"requester[phone]"
+/   .four
+/     = label_tag :"requester[phone]"
+/     = text_field_tag :"requester[phone]"
   
-  .four
-    = label_tag :"requester[mailing_address]"
-    = text_area_tag :"requester[mailing_address]"
+/   .four
+/     = label_tag :"requester[mailing_address]"
+/     = text_area_tag :"requester[mailing_address]"
   
-  %hr
-    .four
-      = label_tag :"request[subject]"
-    .four
-      = text_field_tag :"request[subject]"
+/   %hr
+/     .four
+/       = label_tag :"request[subject]"
+/     .four
+/       = text_field_tag :"request[subject]"
   
-    .four
-      = label_tag :"request[body]"
-    .four
+/     .four
+/       = label_tag :"request[body]"
+/     .four
 
-      = text_area_tag :"request[body]"
+/       = text_area_tag :"request[body]"
   
 
   
-  = submit_tag "Send Request!"
+/   = submit_tag "Send Request!"

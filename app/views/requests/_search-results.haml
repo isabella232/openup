@@ -1,0 +1,43 @@
+/ -paginate @requests, :remote => true
+/ .products
+/   -render @requests
+.six.request-table
+  %table
+    / %tr
+    /   %td{:width => "300px"}
+        
+    /   %td
+    /     -paginate @requests
+
+  
+
+    / -ajax_loadzone do
+    - @requests.each do |request|
+      %tr
+        %td{:width => "300px"}
+          .circles
+            .circle{:class => request.status == 'Fullfilled' ? 'fulfilled' : 'disabled'}
+            .circle{:class => request.status == 'Pending' ? 'pending' : 'disabled'}
+            .circle{:class => request.status == 'Denied' ? 'denied' : 'disabled'}
+        %td
+          .subject 
+            .label
+              Subject: 
+            .content
+              =link_to request.subject, request
+          .clearfix
+          .agency 
+            .label
+              Agency:
+            .content
+              =request.department.name
+              / =request.agency.name
+          .clearfix
+          .date 
+            .label
+              Date:
+            .content
+              =request.created_at
+          .clearfix
+        / %td= request.status
+      / =will_paginage @requests

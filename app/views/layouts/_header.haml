@@ -2,9 +2,10 @@
   .header-inner
     .submit-request
       .yellow-lines
-      = link_to 'Submit Request', root_path
-    .logo{:href => root_path}
-      =image_tag ('logo.png')
+      = link_to 'Submit Request', "#{requests_path}/new"
+    %a{:href => root_path}
+      .logo
+        =image_tag ('logo.png')
     .track-request
       .yellow-lines
       = link_to 'Browse Requests', requests_path

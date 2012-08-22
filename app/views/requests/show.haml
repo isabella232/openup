@@ -5,27 +5,27 @@
 
   .row
     .left
-      .circles{:style => "float: left"}
-        .circle.grey 
-        .circle.grey 
-        .circle.grey 
+      .circles
+        .circle{:class => @request.status == 'Pending' ? 'pending' : 'disabled'}
+        .circle{:class => @request.status == 'Denied' ? 'denied' : 'disabled'}
+        .circle{:class => @request.status == 'Accepted' ? 'accepted' : 'disabled'}
     .right
-      .request-header{:style => "width: 500px"}
+      .request-header
         .row
-          %h3{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
+          %h3
             Subject
-          %span{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
+          %span
             =@request.subject
         .row
-          %h3{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
+          %h3
             Department
-          %span{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
-            / =@request.department.name
+          %span
+            =@request.department.name
         .row
-          %h3{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
+          %h3
             Date
-          %span{:style => "float: left; padding: 0 15px 0 0; margin: 0 15px 0 0;"}
-            May 10, 2010
+          %span
+            =@request.created_at
         
   .row
     .left
@@ -45,7 +45,7 @@
         
       %div
         %strong Status
-        = @request.status
+        / = @request.status
 
   .row
     .left
@@ -54,7 +54,7 @@
       - if @responses.any?
         - @responses.each do |response|
           .response{style: "margin-bottom: 20px;"}
-            %div= response.status
+            / %div= response.status
             %div= response.body
             %div= response.created_at
       - else

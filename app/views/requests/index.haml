@@ -6,9 +6,13 @@
         .browse-requests{:style => "color: #00A99D; width: 220px; margin-left: 100px"}
           Browse requests below by date, search by keyword or filter request by status 
       .three{:style => "float: right;    margin: 60px 60px 0;"}
-        .button.pending Pending
-        .button.fullfiled.disabled Fullfiled
-        .button.denied.disabled Denied
+
+        .button.fulfilled.disabled
+          =link_to "Fullfilled", requests_path(:status => "fullfilled")
+        .button.pending
+          =link_to "Pending", requests_path(:status => "pending")
+        .button.denied.disabled
+          =link_to "Denied", requests_path(:status => "denied")
 
     .clear
     .six.keyword-search
@@ -17,27 +21,4 @@
         %p
           Keyword Search:
           =text_field_tag 'Keyword'
-
-    .six.request-table
-      %table
-        - @requests.each do |request|
-          %tr
-            %td{:width => "300px"}
-              .circles
-                .circle
-                .circle{:class => request.status}
-                .circle
-            / %td= request.response_key
-            %td
-              .subject 
-                Subject: 
-                =link_to request.subject, request
-              .agency 
-                Agency:
-                / =request.department.name
-                / =request.agency.name
-              .date 
-                Date:
-                =request.created_at
-              
-            / %td= request.status
+    =render :partial => "requests/search-results"
