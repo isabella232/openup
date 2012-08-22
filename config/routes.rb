@@ -2,18 +2,23 @@ OpenUp::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+
+  match 'respondto/:request_id/:response_key' => 'responses#new', as: 'response_page', via: :get
+  match 'respondto/:request_id/:response_key' => 'responses#create', as: 'create_response', via: :post
+
+  match "home/index" => "home#index"
+  match "home/stats" => "home#stats"
+
   devise_for :users
 
 #  resources :departments
   resources :requests, only: [:new, :create, :index, :show]
-
   resources :departments
   resources :responses, only: [:create]
   
-  match 'respondto/:request_id/:response_key' => 'responses#new', as: 'response_page', via: :get
-  match 'respondto/:request_id/:response_key' => 'responses#create', as: 'create_response', via: :post
   
   root :to => 'home#index'
+  resources :home, :except => [:show]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
