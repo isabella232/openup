@@ -4,7 +4,6 @@ class RequestsController < ApplicationController
   # before_filter :default_params
 
   def index
-    @total_requests = Request.includes(:department, :responses).count
 
 
     if params[:status].nil?
@@ -41,6 +40,8 @@ class RequestsController < ApplicationController
   end
 
   def new
+    @total_requests = Request.includes(:department, :responses).count    
+    puts "requests total #{@total_requests}"
     @request = Request.new
     @departments = Department.all
   end

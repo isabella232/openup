@@ -22,6 +22,45 @@
 #  d.email = 'eddie@codeforamerica.org'
 # end
 
+# "Administration for Children’s Services"
+# "Commission on Human Rights"
+# "Department for the Aging"
+# "Department of Buildings"
+# "Department of City Planning"
+# "Department of Citywide Administrative Services"
+# "Department of Correction"
+# "Department of Cultural Affairs"
+# "Department of Design & Construction"
+# "Department of Education"
+# "Department of Environmental Protection"
+# "Department of Finance"
+# "Department of Health and Mental Hygiene"
+# "Department of Homeless Services"
+# "Department of Housing Preservation & Development"
+# "Department of Information Technology & Telecommunications"
+# "Department of Investigation"
+# "Department of Parks & Recreation"
+# "Department of Probation"
+# "Department of Records & Information Services"
+# "Department of Sanitation"
+# "Department of Small Business Services"
+# "Department of Transportation"
+# "Department of Youth and Community Development"
+# "Fire Department"
+# "Housing Authority"
+# "Human Resources Administration"
+# "Landmarks Preservation Commission"
+# "Law Department"
+# "Office of Administrative Trials & Hearings*"
+# "Office of Chief Medical Examiner"
+# "Office of Emergency Management"
+# "Office of Labor Relations"
+# "Office of Management & Budget"
+# "Police Department"
+# "Taxi and Limousine Commission*"
+# "Public Advocate"
+
+
 # Department.create! do |d|
 #  d.name = 'Department of Labor'
 #  d.email = 'eddie@codeforamerica.org'
