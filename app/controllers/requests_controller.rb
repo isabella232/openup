@@ -41,17 +41,17 @@ class RequestsController < ApplicationController
 
   def new
     @total_requests = Request.includes(:department, :responses).count    
-    puts "requests total #{@total_requests}"
     @request = Request.new
     @departments = Department.all
   end
   
   def create
+    
     @requester = Requester.find_by_email(params[:requester]["email"])
     
     if !@requester
       @requester = Requester.create(params[:requester])
-      # redirect_to root_path unless @requester.save
+      redirect_to root_path unless @requester.save
     end
     
     @request = @requester.requests.build(params[:request])

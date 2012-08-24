@@ -19,8 +19,8 @@ OpenUp::Application.routes.draw do
 
 #  resources :departments
   resources :requests, only: [:new, :create, :index, :show]
-  resources :departments
   resources :responses, only: [:create]
+  resources :departments
   
   
   root :to => 'home#index'

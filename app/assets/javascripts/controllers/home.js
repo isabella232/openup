@@ -2,9 +2,7 @@ OpenUp.home = {
   
   init: function(){
     console.log("using home");
-    $("[data-scroll-to]").click(function(){
-       OpenUp.home.goToByScroll($(this).data('scroll-to')); 
-    });   
+
     
     //$(window).scroll(OpenUp.home.resizeHeader);
     
@@ -14,7 +12,7 @@ OpenUp.home = {
 
 
   goToByScroll: function(id){
-    $('html,body').animate({scrollTop: $("#"+id).offset().top - 95},'fast');
+    $('html,body').animate({scrollTop: $("#"+id).offset().top},'fast');
   },
 
   resizeHeader: function(){
@@ -28,10 +26,9 @@ OpenUp.home = {
   },
 
   index: function(){
-    console.log("using index");      
+    // console.log("using index");      
 
-    
-
+  
     $.getJSON('/home/stats.json', function(data) {
       // console.log(data)
       var values = [data.total_fulfilled, data.total_denied, data.total_pending],

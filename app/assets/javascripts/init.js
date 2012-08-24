@@ -4,7 +4,10 @@ OpenUp = {
       // application-wide code
       $("select").chosen();
       $("select").chosen({allow_single_deselect:true});    
-    
+
+      $("[data-scroll-to]").click(function(){
+        OpenUp.home.goToByScroll($(this).data('scroll-to')); 
+      });      
     }
 
 
