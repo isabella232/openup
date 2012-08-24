@@ -19,6 +19,9 @@ gem "kaminari"
 # gem "will_paginate", "= 3.0.2"
 
 
+# should eventually go on :test and :development enviroment
+gem "faker"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -44,7 +47,6 @@ group :test, :development do
   gem "shoulda"
   gem "capybara"
   gem "factory_girl_rails"
-  gem "faker"
   gem "rake"
   gem "simplecov"
 end
