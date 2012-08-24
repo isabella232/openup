@@ -12,9 +12,9 @@ class HomeController < ApplicationController
       dept.name = dept.name.gsub(/Department/, "Dept.")
 
       total_department_requests = Request.count(:conditions => "department_id = #{dept.id}").to_f
-      fulfilled_percent = ((Request.count(:conditions => "department_id = #{dept.id} AND status = 'Fullfilled'").to_f / total_department_requests ) * 100).round(3)
-      denied_percent = ((Request.count(:conditions => "department_id = #{dept.id} AND status = 'Denied'").to_f / total_department_requests ) * 100).round(3)
-      pending_percent = ((Request.count(:conditions => "department_id = #{dept.id} AND status = 'Pending'").to_f / total_department_requests ) * 100).round(3)
+      fulfilled_percent = ((Request.count(:conditions => "department_id = #{dept.id} AND status = 'fulfilled'").to_f / total_department_requests ) * 100).round(3)
+      denied_percent = ((Request.count(:conditions => "department_id = #{dept.id} AND status = 'denied'").to_f / total_department_requests ) * 100).round(3)
+      pending_percent = ((Request.count(:conditions => "department_id = #{dept.id} AND status = 'pending'").to_f / total_department_requests ) * 100).round(3)
 
 
       @departments << { :department => dept, 
@@ -58,9 +58,9 @@ class HomeController < ApplicationController
 
   def calc_overview_stats
     @total_requests = Request.count.to_f
-    @total_fullfilled = (( Request.count(:conditions => "status = 'Fullfilled'") / @total_requests ) * 100).round(3)
-    @total_pending = (( Request.count(:conditions => "status = 'Pending'") / @total_requests ) * 100).round(3)
-    @total_denied = (( Request.count(:conditions => "status = 'Denied'") / @total_requests ) * 100).round(3)
+    @total_fullfilled = (( Request.count(:conditions => "status = 'fulfilled'") / @total_requests ) * 100).round(3)
+    @total_pending = (( Request.count(:conditions => "status = 'pending'") / @total_requests ) * 100).round(3)
+    @total_denied = (( Request.count(:conditions => "status = 'denied'") / @total_requests ) * 100).round(3)
   end
 
 end

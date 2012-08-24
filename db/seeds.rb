@@ -53,7 +53,6 @@ end
 
 # Requests:
 Request.destroy_all
-
 1000.times do
  Request.create! do |r|
 
@@ -61,14 +60,13 @@ Request.destroy_all
   r.requester = Requester.first(:offset => rand(Requester.count))
   r.body = Faker::Lorem.paragraph(5)
   r.subject = Faker::Lorem.sentence
-  r.status = 'Pending'
+  r.status = 'pending'
 
  end
 end
 
 # # Responses:
 Response.destroy_all
-
 700.times do
  Response.create! do |r|
   request = Request.first(:offset => rand(Request.count))
@@ -76,7 +74,7 @@ Response.destroy_all
   r.request = request
   r.body = Faker::Lorem.paragraph(5)
 
-  request.status = ['Pending', 'Fullfilled', 'Denied'].sample
+  request.status = ['pending', 'fulfilled', 'denied'].sample
   request.save!
 
  end

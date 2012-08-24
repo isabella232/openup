@@ -9,6 +9,12 @@ OpenUp::Application.routes.draw do
   match "home/index" => "home#index"
   match "home/stats" => "home#stats"
 
+
+  # match '/requests' => 'requests#index', :defaults => { :status => "pending" } 
+  # match '/requests/:id' => 'requests#index'
+  # match '/requests/:status' => 'requests#index', :defaults => { :status => "pending" } 
+  # match '/requests/:status/:department_id' => 'requests#index', :defaults => { :status => "pending" } 
+
   devise_for :users
 
 #  resources :departments

@@ -33,13 +33,22 @@ OpenUp.home = {
     
 
     $.getJSON('/home/stats.json', function(data) {
-
-      console.log(data)
+      // console.log(data)
       var values = [data.total_fulfilled, data.total_denied, data.total_pending],
           labels = ['Fulfilled', 'Denied', 'Pending'],
-          colors = ['#bf272d', '#00A79B', '#D8DF21'];
+          colors = [ '#00A79B' , '#bf272d', '#D8DF21'];
       
       Raphael("pie-chart", 700, 700).pieChart(300, 300, 150, values, labels, colors, "#fff");
+
+
+
+      console.log($(".pie-chart-slice").length);
+
+      $(".pie-chart-slice").click(function(){
+        console.log($(this).attr("href"));
+        window.location = $(this).attr("href");
+        return false;
+      });
 
 
     });

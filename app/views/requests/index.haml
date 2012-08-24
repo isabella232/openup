@@ -7,12 +7,17 @@
           Browse requests below by date, search by keyword or filter request by status 
       .three{:style => "float: right;    margin: 60px 60px 0;"}
 
-        .button.fulfilled.disabled
-          =link_to "Fullfilled", requests_path(:status => "fullfilled")
-        .button.pending
-          =link_to "Pending", requests_path(:status => "pending")
-        .button.denied.disabled
-          =link_to "Denied", requests_path(:status => "denied")
+        =link_to requests_path(:status => "pending") do
+          .button.pending{:class => params[:status] == 'pending' ? '' : ' disabled '  }
+            Pending
+
+        =link_to requests_path(:status => "fulfilled") do
+          .button.fulfilled{:class => params[:status] == 'fulfilled' ? '' : ' disabled ' }
+            Fulfilled
+
+        =link_to requests_path(:status => "denied") do
+          .button.denied{:class => params[:status] == 'denied' ? '' : ' disabled ' }
+            Denied
 
     .clear
     .six.keyword-search

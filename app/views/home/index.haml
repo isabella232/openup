@@ -24,9 +24,12 @@
             =d[:department].name
           .bar
             / =d[:pending_percent]
-            .pending{:style => "width: #{d[:pending_percent]}%"}
-            .fulfilled{:style => "width: #{d[:fulfilled_percent]}%"}
-            .denied{:style => "width: #{d[:denied_percent]}%"}
+            =link_to requests_path(:status => "pending", :department_id => d[:department].id) do        
+              .pending{:style => "width: #{d[:pending_percent]}%"}
+            =link_to requests_path(:status => "fullfilled", :department_id => d[:department].id) do        
+              .fulfilled{:style => "width: #{d[:fulfilled_percent]}%"}
+            =link_to requests_path(:status => "denied", :department_id => d[:department].id ) do        
+              .denied{:style => "width: #{d[:denied_percent]}%"}
 
     .six.columns.chart
       .three.columns

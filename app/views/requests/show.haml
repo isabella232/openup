@@ -6,9 +6,9 @@
   .row
     .left
       .circles
-        .circle{:class => @request.status == 'Pending' ? 'pending' : 'disabled'}
-        .circle{:class => @request.status == 'Denied' ? 'denied' : 'disabled'}
-        .circle{:class => @request.status == 'Accepted' ? 'accepted' : 'disabled'}
+        .circle{:class => @request.status == 'pending' ? 'pending' : 'disabled'}
+        .circle{:class => @request.status == 'fulfilled' ? 'fulfilled' : 'disabled'}
+        .circle{:class => @request.status == 'denied' ? 'denied' : 'disabled'}
     .right
       .request-header
         .row
@@ -32,20 +32,19 @@
       %h3 Requests
     .right
       %div
-        %strong Subject
-        = @request.subject
+        =@request.subject
         
       %div
-        %strong Body
+        / %strong Body
         = @request.body
         
-      %div
-        %strong Key
-        = @request.response_key
+      / %div
+      /   %strong Key
+      /   = @request.response_key
         
-      %div
-        %strong Status
-        / = @request.status
+      / %div
+      /   %strong Status
+      /   = @request.status
 
   .row
     .left

@@ -6,97 +6,99 @@
     .text Get Started.
     .triangle
   
-.step1#step1
-  .inner
-    .step-header
-      .step-number 1
-      .step-question What would you like to ask?
+= form_tag @request do
     
-    .main
-      .request-form-fields
-        %label From which city agency are you requesting information?
-        = collection_select :request, :department_id, Department.all, :id, :name
-        
-      .break
-        .lines
-        .or Or
-        .lines
+  .step1#step1
+    .inner  
+      .step-header
+        .step-number 1
+        .step-question What would you like to ask?
       
-      .dont-know 
-        Don't know who to ask? 
-        %br
-        No worries, we'll give you a hand.
+      .main
+        .request-form-fields
+          %label From which city agency are you requesting information?
+          = collection_select :request, :department_id, Department.all, :id, :name
+          
+        .break
+          .lines
+          .or Or
+          .lines
         
-      .request-form-fields
-        %label 
-          Select the general issue area from the list below which best describes your request.
-        = select_tag "issue_area", options_for_select(['Business & Finance', 'Culture & Recreation', 'Education', 'Environment & Sanitation', 'Government Operations', 'Health', 'Housing, Land Use & Construction', 'Public Safety & Law', 'Social Services'])
-    
-        
-    
-    .next-section{:"data-scroll-to" => "step2"}
-      .text Next Step
-      .triangle
-    
-    .clearfix
-
-.step2#step2
-  .inner
-    .step-header
-      .step-number 2
-      .step-question What info are you looking for?
-    
-    .main
-      .tips
-        .tips-header Tips of the Trade
-        .tips-content 
-          Ex nulla mollit sriracha, mcsweeney's eiusmod adipisicing terry richardson fap banh mi nisi mlkshk laboris. Retro keytar semiotics carles, blog authentic wes anderson. Ethical ea fingerstache laborum exercitation aesthetic dolore banksy, godard biodiesel raw denim. Brooklyn lo-fi dreamcatcher, delectus nesciunt portland pinterest post-ironic ethnic.
-        
-      .request-form-fields
-        %label What is your request concerning?
-        = text_field_tag :"request[subject]"
-        %label What is your request?
-        = text_area_tag :"request[body]"
+        .dont-know 
+          Don't know who to ask? 
+          %br
+          No worries, we'll give you a hand.
+          
+        .request-form-fields
+          %label 
+            Select the general issue area from the list below which best describes your request.
+          = select_tag "issue_area", options_for_select(['Business & Finance', 'Culture & Recreation', 'Education', 'Environment & Sanitation', 'Government Operations', 'Health', 'Housing, Land Use & Construction', 'Public Safety & Law', 'Social Services'])
       
-      .next-section{:"data-scroll-to" => "step3"}
-        .text Almost Done...
+          
+      
+      .next-section{:"data-scroll-to" => "step2"}
+        .text Next Step
         .triangle
       
-    .sidebar
-      .badge For Example
+      .clearfix
+
+  .step2#step2
+    .inner
+      .step-header
+        .step-number 2
+        .step-question What info are you looking for?
+      
+      .main
+        .tips
+          .tips-header Tips of the Trade
+          .tips-content 
+            Ex nulla mollit sriracha, mcsweeney's eiusmod adipisicing terry richardson fap banh mi nisi mlkshk laboris. Retro keytar semiotics carles, blog authentic wes anderson. Ethical ea fingerstache laborum exercitation aesthetic dolore banksy, godard biodiesel raw denim. Brooklyn lo-fi dreamcatcher, delectus nesciunt portland pinterest post-ironic ethnic.
+          
+        .request-form-fields
+          %label What is your request concerning?
+          = text_field_tag :"request[subject]"
+          %label What is your request?
+          = text_area_tag :"request[body]"
+        
+        .next-section{:"data-scroll-to" => "step3"}
+          .text Almost Done...
+          .triangle
+        
+      .sidebar
+        .badge For Example
+      
+        .tips-header Good
+        .tips-content 
+          Ex nulla mollit sriracha, mcsweeney's eiusmod adipisicing terry richardson fap banh mi nisi mlkshk laboris. Retro keytar semiotics carles, blog authentic wes anderson. 
     
-      .tips-header Good
-      .tips-content 
-        Ex nulla mollit sriracha, mcsweeney's eiusmod adipisicing terry richardson fap banh mi nisi mlkshk laboris. Retro keytar semiotics carles, blog authentic wes anderson. 
-  
-      .tips-header Not so good
-      .tips-content 
-        Ex nulla mollit sriracha, mcsweeney's eiusmod adipisicing terry richardson fap banh mi nisi mlkshk laboris. Retro keytar semiotics carles, blog authentic wes anderson. 
-      
-      .still-curious Still curious? Read FAQs on getting your requests answered.
-  
-    .clearfix    
+        .tips-header Not so good
+        .tips-content 
+          Ex nulla mollit sriracha, mcsweeney's eiusmod adipisicing terry richardson fap banh mi nisi mlkshk laboris. Retro keytar semiotics carles, blog authentic wes anderson. 
+        
+        .still-curious Still curious? Read FAQs on getting your requests answered.
+    
+      .clearfix    
 
-.step3#step3
-  .inner
-    .step-header
-      .step-number 3
-      .step-question And a little bit about you...
+  .step3#step3
+    .inner
+      .step-header
+        .step-number 3
+        .step-question And a little bit about you...
 
-    .main
-      .request-form-fields
-        %label Your Name
-        = text_field_tag :"requester[name]"
-      
-        %label Your Email Address
-        = text_field_tag :"requester[email]"
-      
-        %label Your Phone Number
-        = text_field_tag :"requester[phone]"
-      
-        %input{type: "submit", class: "button", value: "Send Request!"}
-        .disclaimer (This site is a proof-of-concept only, and does not actually submit a FOIL request!)
-      
+      .main
+        .request-form-fields
+          %label Your Name
+          = text_field_tag :"requester[name]"
+        
+          %label Your Email Address
+          = text_field_tag :"requester[email]"
+        
+          %label Your Phone Number
+          = text_field_tag :"requester[phone]"
+        
+          %input{type: "submit", class: "button", value: "Send Request!"}
+          .disclaimer (This site is a proof-of-concept only, and does not actually submit a FOIL request!)
+        
       
 
 / = form_tag @request do

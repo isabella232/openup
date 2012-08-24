@@ -126,7 +126,14 @@
 
 
 .request-header{
+  
+  .row{
+    margin-bottom: 10px;    
+  }
 
+  h3{
+    width: 105px;
+  }
   h3, span{
     float: left; 
     padding: 0 15px 0 0; 
@@ -143,12 +150,20 @@
   width: 960px; 
   margin: 0 auto;
 
+  min-height: 600px;
+
 
   .left{
     width: 250px;
     float: left;
     text-align: right;
     @include circle-icon;
+
+    h3{
+
+      padding: 0;
+      margin: 0;
+    }
 
   }
   .circles{

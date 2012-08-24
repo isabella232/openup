@@ -16,9 +16,9 @@
       %tr
         %td{:width => "300px"}
           .circles
-            .circle{:class => request.status == 'Fullfilled' ? 'fulfilled' : 'disabled'}
-            .circle{:class => request.status == 'Pending' ? 'pending' : 'disabled'}
-            .circle{:class => request.status == 'Denied' ? 'denied' : 'disabled'}
+            .circle{:class => request.status == 'pending' ? 'pending' : 'disabled'}
+            .circle{:class => request.status == 'fulfilled' ? 'fulfilled' : 'disabled'}
+            .circle{:class => request.status == 'denied' ? 'denied' : 'disabled'}
         %td
           .subject 
             .label

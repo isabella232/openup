@@ -163,7 +163,7 @@ button::-moz-focus-inner,input::-moz-focus-inner {
   text-align: center;
 
   &.disabled{
-   background: #ccc;
+   background: #ccc !important;
   }
 
 
@@ -207,6 +207,9 @@ button::-moz-focus-inner,input::-moz-focus-inner {
   }
 }
 
+strong, b{
+  font-weight: 600;
+}
 
 footer{
   background: url("/assets/yellowstripe.png") repeat scroll 0 0 transparent;
